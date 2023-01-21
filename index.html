@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>新年快乐!</title>
 
-<audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="media/zh_cn.mp3"></audio>
+<title>新年快乐!
+<embed src="media/zh_cn.mp3" autostart="true" loop="true" hidden="true"></embed>
+</title>
 
 <style>
 html,body{
@@ -148,15 +149,7 @@ function splode(x,y,z){
 		spark.trail=new Array();
 		sparks.push(spark);
 	}
-	switch(parseInt(Math.random()*4)){
-		case 0:	pow=new Audio(s+"pow1.ogg"); break;
-		case 1:	pow=new Audio(s+"pow2.ogg"); break;
-		case 2:	pow=new Audio(s+"pow3.ogg"); break;
-		case 3:	pow=new Audio(s+"pow4.ogg"); break;
-	}
 	d=Math.sqrt((x-playerX)*(x-playerX)+(y-playerY)*(y-playerY)+(z-playerZ)*(z-playerZ));
-	pow.volume=1.5/(1+d/10);
-	pow.play();
 }
 
 function doLogic(){
