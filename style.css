@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #070315;
+}
+
+.title {
+  margin: auto;
+  margin-top: 5%;
+  font-size: 5em;
+  font-weight: 600;
+  text-align: center;
+}
+.title h2 {
+  margin: auto;
+  color: rgba(0, 100, 255);
+  filter: drop-shadow(0 0 1px #0066ffff) drop-shadow(0 0 25px #0066ffff);
+}
+.title span {
+  margin: auto;
+  position: relative;
+  top: -80px;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.inputBox {
+  position: relative;
+  margin-right: 35%;
+  margin-left: 35%;
+}
+.inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #999;
+  color: #fff;
+  letter-spacing: 0.05em;
+  font-size: 1.25em;
+  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+.inputBox label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 50%;
+  pointer-events: none;
+  color: #666;
+  user-select: none;
+}
+.inputBox label span {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 1.25em;
+  letter-spacing: 0.05em;
+  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+.inputBox input:focus ~ label span,
+.inputBox input:valid ~ label span {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+  transform: translateY(-30px);
+}
+.inputBox input:focus,
+.inputBox input:valid {
+  border-bottom: 2px solid #fff;
+  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+.inputBox button {
+  position: relative;
+  left: 90%;
+  bottom: 25px;
+  display: inline-flex;
+}
