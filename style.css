@@ -4,37 +4,44 @@
   box-sizing: border-box;
 }
 body {
+  display: flex;
+  flex-direction: column;
   background: #070315;
 }
 
 .title {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
   margin-top: 5%;
   font-size: 5em;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 5px;
   text-align: center;
 }
 .title h2 {
-  margin: auto;
-  color: rgba(0, 100, 255);
-  filter: drop-shadow(0 0 1px #0066ffff) drop-shadow(0 0 25px #0066ffff);
+  color: #0096ff;
+  filter: drop-shadow(0 0 5px #0096ff) drop-shadow(0 0 25px #0096ff);
 }
 .title span {
-  margin: auto;
   position: relative;
   top: -80px;
   color: rgba(255, 255, 255, 0.15);
 }
 
 .inputBox {
+  display: flex;
   position: relative;
-  margin-right: 35%;
-  margin-left: 35%;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30%;
+  margin-left: 30%;
 }
 .inputBox input {
+  display: flex;
   position: relative;
+  order: 0;
+  padding-bottom: 5px;
   width: 100%;
-  padding: 10px 0;
   background: transparent;
   border: none;
   outline: none;
@@ -45,11 +52,10 @@ body {
   transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
 }
 .inputBox label {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  display: flex;
   position: absolute;
-  inset: 50%;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   color: #666;
   user-select: none;
@@ -74,8 +80,52 @@ body {
   transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
 }
 .inputBox button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  left: 90%;
-  bottom: 25px;
-  display: inline-flex;
+  margin-top: 20px;
+  width: 150px;
+  height: 45px;
+  /* z-index: 1; */
+  border-radius: 10px;
+  color: #fff;
+  background: #222;
+  cursor: pointer;
+}
+.inputBox button span {
+  font-size: medium;
+}
+.inputBox button::after {
+  content: "";
+  width: 158px;
+  height: 53px;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  transition: all 0.35s;
+  border-radius: 10px;
+  z-index: -1;
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    purple,
+    red
+  );
+  filter: blur(5px);
+  background-size: 1000%;
+  animation: amSize 40s linear infinite;
+}
+@keyframes amSize {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000% 0;
+  }
 }
