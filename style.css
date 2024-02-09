@@ -57,7 +57,7 @@ body {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  color: #666;
+  color: #999;
   user-select: none;
 }
 .inputBox label span {
@@ -90,11 +90,12 @@ body {
   /* z-index: 1; */
   border-radius: 10px;
   color: #fff;
-  background: #222;
+  background: #070315;
   cursor: pointer;
 }
 .inputBox button span {
   font-size: medium;
+  columns: #fff;
 }
 .inputBox button::after {
   content: "";
