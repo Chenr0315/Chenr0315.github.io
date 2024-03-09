@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>070304</title>
+  </head>
+
+  <body>
+    <div>
+      <p>
+        被顶级域名供应商被刺了( <br />
+        没有写样式表，简陋了一些<br />
+        但我的情感是真挚的 :)<br />
+      </p>
+    </div>
+    <br />
+    <div>
+      <h1>正文</h1>
+      <p>
+        你看到的每一个字<br />
+        我都犹豫了好久<br />
+        久到...<br />
+        实在找不到合适的语言，恐怕我忘了该怎么和你说话吧<br />
+      </p>
+      <p>
+        也许你并不出类拔萃<br />
+        但你仍然优秀<br />
+        记得中考复习<br />
+        数学有道题画y=|x|的图像<br />
+        显然是两条射线<br />
+        但当时我就想<br />
+        你一定会用五点法画一条抛物线<br />
+        <br />
+        果不其然233<br />
+        可能是你那种惯性思维<br />
+        也许是你那丝直截了当<br />
+        一道题挥挥洒洒迎刃而解<br />
+        只可惜是错解<br />
+      </p>
+      <p>
+        初中能被分到一起坐同桌<br />
+        当然是因为成绩接近，学习能力相似<br />
+        甚至有些时候脑回路也差不多(?)<br />
+        <br />
+        你本来能在重点班<br />
+        我们中考分数只有几分只差<br />
+        只是填分配生志愿...<br />
+        其实我很清楚<br />
+        你我都考不上临中<br />
+        没有什么奇迹，态度决定一切<br />
+        <br />
+        唯一遗憾没有提醒你一句<br />
+        哪怕什么也改变不了<br />
+      </p>
+      <p>
+        还有许多许多<br />
+        <i
+          ><del>总有数不清的遗憾<br /></del
+        ></i>
+        <i
+          ><del>总有撇不清的悔意<br /></del
+        ></i>
+        别把这些脏水往心里倒<br />
+        我没有指责你<br />
+        没有寻求安慰<br />
+        <i
+          ><del>只是有些愧疚<br /></del
+        ></i>
+      </p>
+      <p>
+        想起《Finding Paradise》<br />
+        "Because trading my yesterday<br />
+        is to wish my life away"<br />
+        ——幸好你一如既往<br />
+        ——辗转反侧 我只想说<br />
+        我真的已经暗恋你了<br />
+        <span id="day"></span>天 <span id="hour"></span>小时
+        <span id="min"></span>分钟 <span id="sec"></span>秒<br />
+      </p>
+      <p>
+        从未想过<br />
+        原来记住一个人的生日<br />
+        会有那么刻骨铭心<br />
+        <br />
+        原来"看见你心里就像融化了一样"<br />
+        这句话没有用任何修辞手法<br />
+        <br />
+        我把你的名字写了3219遍<br />
+        坚持一件事真能悟出点道理来:<br />
+        写你的名字可真难<br />
+        倒不是笔画繁琐<br />
+        只是要蘸上<br />
+        四分的春风<br />
+        三分的执着<br />
+        二分的灵动<br />
+        还有一分你的洒脱才好
+      </p>
+      <p>
+        也许打扰到你了<br />
+        无论如何<br />
+        视而不见吧<br />
+        这次不要匆忙给出你的答案了<br />
+      </p>
+    </div>
+    <script>
+      var target_time = new Date("2023/7/1");
+      // 获取需要对应插入数据的节点
+      var day_ele = document.getElementById("day");
+      var hour_ele = document.getElementById("hour");
+      var min_ele = document.getElementById("min");
+      var sec_ele = document.getElementById("sec");
+      // 获取目标时间到当前时间的毫秒数，进行计算并返回结果
+      function countDown() {
+        var reduce_ms = Date.now() - target_time.getTime();
+        return {
+          day: parseInt(reduce_ms / 1000 / 3600 / 24),
+          hour: parseInt((reduce_ms / 1000 / 3600) % 24),
+          min: parseInt((reduce_ms / 1000 / 60) % 60),
+          sec: Math.round((reduce_ms / 1000) % 60),
+        };
+      }
+      // 将数据渲染到页面指定节点中
+      function renderCountDown() {
+        var res = countDown();
+        day_ele.innerHTML = addZero(res.day);
+        hour_ele.innerHTML = addZero(res.hour);
+        min_ele.innerHTML = addZero(res.min);
+        sec_ele.innerHTML = addZero(res.sec);
+        setTimeout(renderCountDown, 1000);
+      }
+      // 封装函数，当数值小于10时在前面加“0”
+      function addZero(num) {
+        if (num < 10) {
+          return "0" + num;
+        }
+        return num;
+      }
+      // 实现倒计时效果
+      renderCountDown();
+    </script>
+  </body>
+</html>

@@ -3,34 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>There</title>
+    <title>新年快乐</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="title">
-      <h2>你好</h2>
-      <span>H e l l o</span>
+    <div id="love"></div>
+    <div>
+      <!-- ['xīn nián kuài lè', '新 年 快 樂', '(HAPPY NEW YEAR)'] -->
+      <span id="line1" class="text">xīn nián kuài lè</span><br />
+      <span id="line2" class="text">新 年 快 乐</span><br />
+      <span id="line3" class="text">(HAPPY NEW YEAR)</span>
     </div>
-    <div class="inputBox">
-      <input type="text" required />
-      <label>
-        <span style="transition-delay: 30ms; filter: hue-rotate(30deg)"
-          >>请</span
-        >
-        <span style="transition-delay: 60ms; filter: hue-rotate(60deg)"
-          >验</span
-        >
-        <span style="transition-delay: 90ms; filter: hue-rotate(90deg)"
-          >证</span
-        >
-        <span style="transition-delay: 120ms; filter: hue-rotate(120deg)"
-          >身</span
-        >
-        <span style="transition-delay: 150ms; filter: hue-rotate(150deg)"
-          >份<</span
-        >
-      </label>
-      <button><span>提交</span></button>
+    <div id="button">
+      <p>>></p>
+      <button id="btn">祝福+ +</button>
+      <p><<</p>
     </div>
+    <p id="p" class="text" style="opacity: 0">₍ᐢ⸝⸝ › ~ ‹⸝⸝ᐢ₎</p>
+
+    <script src="script.js"></script>
   </body>
 </html>

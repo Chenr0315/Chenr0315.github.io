@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background: #070315;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  font-size: 5em;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-align: center;
+}
+.title h2 {
+  color: #0096ff;
+  filter: drop-shadow(0 0 5px #0096ff) drop-shadow(0 0 25px #0096ff);
+}
+.title span {
+  position: relative;
+  top: -80px;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.inputBox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30%;
+  margin-left: 30%;
+}
+.inputBox input {
+  display: flex;
+  position: relative;
+  order: 0;
+  padding-bottom: 5px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #999;
+  color: #fff;
+  letter-spacing: 0.05em;
+  font-size: 1.25em;
+  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+.inputBox label {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: #999;
+  user-select: none;
+}
+.inputBox label span {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 1.25em;
+  letter-spacing: 0.05em;
+  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+.inputBox input:focus ~ label span,
+.inputBox input:valid ~ label span {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+  transform: translateY(-30px);
+}
+.inputBox input:focus,
+.inputBox input:valid {
+  border-bottom: 2px solid #fff;
+  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+.inputBox button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  width: 150px;
+  height: 45px;
+  /* z-index: 1; */
+  border-radius: 10px;
+  color: #fff;
+  background: #070315;
+  cursor: pointer;
+}
+.inputBox button span {
+  font-size: medium;
+  columns: #fff;
+}
+.inputBox button::after {
+  content: "";
+  width: 158px;
+  height: 53px;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  transition: all 0.35s;
+  border-radius: 10px;
+  z-index: -1;
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    purple,
+    red
+  );
+  filter: blur(5px);
+  background-size: 1000%;
+  animation: amSize 40s linear infinite;
+}
+@keyframes amSize {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000% 0;
+  }
+}

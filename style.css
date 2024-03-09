@@ -1,123 +1,108 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
+  background-color: #c6070c;
   display: flex;
-  flex-direction: column;
-  background: #070315;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
-  font-size: 5em;
-  font-weight: 500;
-  letter-spacing: 5px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: #ffe392;
+  flex-direction: column;
 }
-.title h2 {
-  color: #0096ff;
-  filter: drop-shadow(0 0 5px #0096ff) drop-shadow(0 0 25px #0096ff);
-}
-.title span {
+#love {
+  opacity: 0;
   position: relative;
-  top: -80px;
-  color: rgba(255, 255, 255, 0.15);
+  top: 250px;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  transform: rotate(45deg);
+  background-color: crimson;
+  transition: opacity 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.run {
+  opacity: 1 !important;
+  animation: love 1s infinite;
+}
+#love::after,
+#love::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: crimson;
+  transition: opacity 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.run::after,
+.run::before {
+  animation: love 1s infinite;
+}
+#love::after {
+  top: 0px;
+  left: -100px;
+}
+#love::before {
+  top: -100px;
+  left: 0;
+}
+@keyframes love {
+  0% {
+    width: 200px;
+    height: 200px;
+  }
+  20% {
+    width: 230px;
+    height: 230px;
+    background-color: #ef3953;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
 }
 
-.inputBox {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 30%;
-  margin-left: 30%;
+#line1 {
+  height: 20px;
+  font-size: 1.1em;
+  letter-spacing: 30px;
 }
-.inputBox input {
+#line2 {
+  font: 700 8em "";
+  text-align: center;
+  padding: 0px;
+}
+#line3 {
+  font-size: 3em;
+}
+.text {
+  transition: opacity 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+#btn {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  order: 0;
-  padding-bottom: 5px;
-  width: 100%;
-  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 20px;
   border: none;
-  outline: none;
-  border-bottom: 2px solid #999;
-  color: #fff;
-  letter-spacing: 0.05em;
-  font-size: 1.25em;
-  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
-}
-.inputBox label {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  color: #999;
-  user-select: none;
-}
-.inputBox label span {
-  position: relative;
-  display: inline-flex;
-  flex-direction: row;
-  font-size: 1.25em;
-  letter-spacing: 0.05em;
-  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
-}
-.inputBox input:focus ~ label span,
-.inputBox input:valid ~ label span {
-  color: #0f0;
-  text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
-  transform: translateY(-30px);
-}
-.inputBox input:focus,
-.inputBox input:valid {
-  border-bottom: 2px solid #fff;
-  transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
-}
-.inputBox button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-top: 20px;
-  width: 150px;
-  height: 45px;
-  /* z-index: 1; */
-  border-radius: 10px;
-  color: #fff;
-  background: #070315;
+  border-radius: 5px;
   cursor: pointer;
+  background-color: #ffe392;
+  font-size: 30px;
+  color: #c6070c;
 }
-.inputBox button span {
-  font-size: medium;
-  columns: #fff;
-}
-.inputBox button::after {
+#btn::after {
+  display: inline-flex;
   content: "";
-  width: 158px;
-  height: 53px;
+  width: 105%;
+  height: 110%;
   position: absolute;
-  top: -4px;
-  left: -4px;
   transition: all 0.35s;
-  border-radius: 10px;
+  border-radius: 5px;
   z-index: -1;
-  background: linear-gradient(
-    45deg,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    purple,
-    red
-  );
+  background: linear-gradient(45deg, red, orange, pink, gold, red);
   filter: blur(5px);
   background-size: 1000%;
   animation: amSize 40s linear infinite;
@@ -129,4 +114,16 @@ body {
   100% {
     background-position: 1000% 0;
   }
+}
+#button {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 50px;
+}
+#button p {
+  margin: 0;
+  padding: 0 10px 0 10px;
+  font-size: 50px;
+  color: gold;
 }
